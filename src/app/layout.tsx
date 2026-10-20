@@ -74,7 +74,7 @@ export default function RootLayout({
       lang="en"
       className={`${jakarta.variable} ${inter.variable} ${mono.variable} scroll-smooth`}
     >
-      <body className="min-h-screen flex flex-col font-sans bg-[#0B1628] text-[#F8F7F3] selection:bg-[#F97316]/30 selection:text-white antialiased">
+      <body className="min-h-screen flex flex-col font-sans bg-[#002D5B] text-white selection:bg-[#00A3E0]/40 selection:text-white antialiased">
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2.5 focus:bg-[#F97316] focus:text-white focus:font-semibold focus:rounded-md focus:shadow-xl focus:outline-none focus:ring-2 focus:ring-white"

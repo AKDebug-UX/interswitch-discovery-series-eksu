@@ -16,32 +16,32 @@ export function Footer() {
   ];
 
   return (
-    <footer className="bg-[#050B15] text-slate-400 text-xs border-t border-slate-800">
+    <footer className="bg-[#00142A] text-sky-200 text-xs border-t border-sky-900/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
           {/* Identity & Scope (5 cols) */}
           <div className="md:col-span-5 space-y-4">
             <div className="flex items-center gap-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#F97316]"></span>
+              <span className="w-2.5 h-2.5 rounded-full bg-[#00A3E0]"></span>
               <span className="font-extrabold text-base tracking-tight text-white">
-                DISCOVERY SERIES
+                INTERSWITCH DISCOVERY SERIES
               </span>
-              <span className="px-1.5 py-0.5 rounded text-[10px] font-bold bg-[#10233E] text-[#60A5FA] border border-blue-500/30">
+              <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-gradient-to-r from-[#EF4444] to-[#F97316] text-white">
                 {EVENT_CONFIG.edition}
               </span>
             </div>
 
-            <p className="text-slate-300 text-xs leading-relaxed max-w-sm">
-              An independent community and digital product concept for the announced {EVENT_CONFIG.name} at {EVENT_CONFIG.institution.name}.
+            <p className="text-sky-100/80 text-xs leading-relaxed max-w-sm">
+              An independent community and digital product concept for the announced {EVENT_CONFIG.name} with {EVENT_CONFIG.institution.name}.
             </p>
 
-            <div className="space-y-1.5 pt-1 text-slate-400 font-mono text-[11px]">
+            <div className="space-y-1.5 pt-1 text-sky-300 font-mono text-[11px]">
               <div className="flex items-center gap-2">
                 <Calendar className="w-3.5 h-3.5 text-[#F97316]" />
                 <span>{EVENT_CONFIG.dates.display}</span>
               </div>
               <div className="flex items-center gap-2">
-                <MapPin className="w-3.5 h-3.5 text-[#60A5FA]" />
+                <MapPin className="w-3.5 h-3.5 text-[#00A3E0]" />
                 <span>{EVENT_CONFIG.institution.name}, Ado-Ekiti, Nigeria</span>
               </div>
             </div>

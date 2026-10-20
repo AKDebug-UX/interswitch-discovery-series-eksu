@@ -12,7 +12,7 @@ import { FinalCta } from "@/components/sections/FinalCta";
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col bg-[#0B1628] text-[#F8F7F3]">
+    <div className="min-h-screen flex flex-col bg-[#002D5B] text-white">
       <Navbar />
       <main id="main-content" className="flex-1 focus:outline-none">
         <Hero />

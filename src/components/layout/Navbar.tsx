@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { EVENT_CONFIG } from "@/config/event";
-import { Menu, X, ExternalLink, Calendar, MapPin } from "lucide-react";
+import { Menu, X, ExternalLink } from "lucide-react";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);

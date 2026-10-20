@@ -1,6 +1,6 @@
 import React from "react";
 import { EVENT_ACTIVITIES } from "@/config/event";
-import { CheckCircle2, ArrowRight } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 
 export function Activities() {
   const getBadgeClass = (style: "cyan" | "orange-gradient" | "navy") => {
