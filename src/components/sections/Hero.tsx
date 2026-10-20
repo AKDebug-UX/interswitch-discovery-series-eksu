@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import { EVENT_CONFIG } from "@/config/event";
 import { getGoogleCalendarUrl, downloadIcsFile } from "@/utils/calendar";
 import {
@@ -10,7 +11,7 @@ import {
   MapPin,
   ShieldCheck,
   Download,
-  CheckCircle2,
+  Sparkles,
 } from "lucide-react";
 
 export function Hero() {
@@ -45,56 +46,81 @@ export function Hero() {
     return () => clearInterval(interval);
   }, []);
 
+  const flyerBadges = [
+    { label: "Entrepreneurship Workshop", style: "badge-cyan" },
+    { label: "Design Thinking Session", style: "badge-orange-gradient" },
+    { label: "Hackathon", style: "badge-navy" },
+    { label: "Product Integration Session", style: "badge-cyan" },
+    { label: "Grand Pitch", style: "badge-orange-gradient" },
+    { label: "Amazing Prizes to be won", style: "badge-navy" },
+  ];
+
   return (
-    <section className="relative overflow-hidden bg-[#0B1628] text-white pt-8 pb-16 md:pt-14 md:pb-24 border-b border-slate-800">
-      {/* Background Architectural Grid Lines */}
-      <div className="absolute inset-0 bg-grid-hairline opacity-60 pointer-events-none" aria-hidden="true" />
-      <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-orange-500/10 rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
+    <section className="relative overflow-hidden bg-gradient-to-b from-[#0284C7] via-[#0369A1] to-[#002D5B] text-white pt-10 pb-16 md:pt-14 md:pb-24 border-b border-sky-800">
+      {/* Radiating Concentric Discovery Ripple Rings from official poster */}
+      <div className="absolute inset-0 bg-radar-rings pointer-events-none opacity-80" aria-hidden="true" />
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-cyan-300/15 rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
+      <div className="absolute bottom-0 left-10 w-96 h-96 bg-orange-500/15 rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Hero Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          {/* Left Column: Editorial & Primary Actions (7 cols) */}
+          {/* Left Column: Editorial & Event Branding (7 cols) */}
           <div className="lg:col-span-7 space-y-6">
-            {/* Context Badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#10233E] border border-blue-500/30 text-xs">
-              <span className="w-2 h-2 rounded-full bg-[#60A5FA]"></span>
-              <span className="font-mono text-blue-300 font-medium tracking-wide">
-                INTERSWITCH DISCOVERY SERIES · EKSU 2026
-              </span>
+
+            {/* Headline with exact flyer identity */}
+            <div className="space-y-3">
+              <div className="inline-block px-4 py-1.5 rounded-lg bg-gradient-to-r from-[#F97316] to-[#EF4444] text-white text-xs sm:text-sm font-bold tracking-wide shadow-md uppercase">
+                With Ekiti State University
+              </div>
+
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-[1.08]">
+                Interswitch{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-sky-100 to-cyan-200">
+                  Discovery Series
+                </span>
+              </h1>
             </div>
 
-            {/* Headline */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-[1.08] max-w-2xl">
-              Your next big idea deserves to be{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-sky-300 to-amber-300">
-                discovered.
-              </span>
-            </h1>
-
             {/* Supporting Copy */}
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl">
+            <p className="text-base sm:text-lg text-sky-100/90 leading-relaxed max-w-xl">
               Three days of technology, creativity, and entrepreneurship at Ekiti State University.
-              Bring your prototypes, sharpen your engineering craft, and connect with mentors who can help turn student ambition into real-world impact.
+              Bring your ideas, sharpen your skills, and connect with people who can help you take them further.
             </p>
+
+            {/* Official Program Highlights Strip matching exact flyer badges */}
+            <div className="space-y-2 pt-1">
+              <div className="text-xs font-mono text-cyan-200 uppercase tracking-widest font-bold">
+                Program Highlights:
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {flyerBadges.map((badge, idx) => (
+                  <span
+                    key={idx}
+                    className={`inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-semibold ${badge.style} transition-transform hover:scale-105`}
+                  >
+                    {badge.label}
+                  </span>
+                ))}
+              </div>
+            </div>
 
             {/* Event Key Facts Strip */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 max-w-xl">
-              <div className="flex items-start gap-3 p-3 rounded-lg bg-[#10233E]/70 border border-slate-700/60">
+              <div className="flex items-start gap-3 p-3.5 rounded-xl bg-[#002D5B]/80 backdrop-blur-sm border border-sky-600/40 shadow-sm">
                 <Calendar className="w-5 h-5 text-[#F97316] shrink-0 mt-0.5" />
                 <div>
-                  <div className="text-xs font-mono text-slate-400 uppercase tracking-wider">Dates Confirmed</div>
-                  <div className="text-sm font-semibold text-white">{EVENT_CONFIG.dates.display}</div>
+                  <div className="text-xs font-mono text-sky-300 uppercase tracking-wider">Event Dates</div>
+                  <div className="text-sm font-bold text-white">Oct 28th – 30th, 2026</div>
                 </div>
               </div>
 
-              <div className="flex items-start gap-3 p-3 rounded-lg bg-[#10233E]/70 border border-slate-700/60">
-                <MapPin className="w-5 h-5 text-[#60A5FA] shrink-0 mt-0.5" />
+              <div className="flex items-start gap-3 p-3.5 rounded-xl bg-[#002D5B]/80 backdrop-blur-sm border border-sky-600/40 shadow-sm">
+                <MapPin className="w-5 h-5 text-cyan-300 shrink-0 mt-0.5" />
                 <div>
-                  <div className="text-xs font-mono text-slate-400 uppercase tracking-wider">Institution & Campus</div>
-                  <div className="text-sm font-semibold text-white">
-                    {EVENT_CONFIG.institution.name}, Ado-Ekiti
+                  <div className="text-xs font-mono text-sky-300 uppercase tracking-wider">Host Campus</div>
+                  <div className="text-sm font-bold text-white">
+                    Ekiti State University, Ado-Ekiti
                   </div>
                 </div>
               </div>
@@ -106,7 +132,7 @@ export function Hero() {
                 href={EVENT_CONFIG.registration.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-[#F97316] hover:bg-[#EA580C] text-white text-sm font-bold tracking-wide transition-all duration-200 shadow-lg shadow-orange-950/50 hover:shadow-orange-900/80 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-orange-400"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-[#EF4444] to-[#F97316] hover:from-[#DC2626] hover:to-[#EA580C] text-white text-sm font-bold tracking-wide transition-all duration-200 shadow-xl shadow-orange-950/40 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-orange-300"
               >
                 <span>Register on Official Portal</span>
                 <ExternalLink className="w-4 h-4" aria-hidden="true" />
@@ -115,10 +141,10 @@ export function Hero() {
               <div className="flex items-center gap-2">
                 <a
                   href="#schedule"
-                  className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-lg bg-[#10233E] hover:bg-[#162F52] text-slate-200 hover:text-white border border-slate-700 text-sm font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-[#002D5B] hover:bg-[#003870] text-sky-100 hover:text-white border border-sky-600/50 text-sm font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-sky-300"
                 >
                   <span>3-Day Programme</span>
-                  <ArrowDown className="w-4 h-4 text-slate-400" />
+                  <ArrowDown className="w-4 h-4 text-sky-300" />
                 </a>
 
                 {/* Calendar Dropdown */}
@@ -127,21 +153,21 @@ export function Hero() {
                     type="button"
                     onClick={() => setCalMenuOpen(!calMenuOpen)}
                     aria-label="Add event to calendar"
-                    className="p-3.5 rounded-lg bg-[#10233E] hover:bg-[#162F52] text-slate-300 hover:text-white border border-slate-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    className="p-3.5 rounded-xl bg-[#002D5B] hover:bg-[#003870] text-sky-200 hover:text-white border border-sky-600/50 transition-colors focus:outline-none focus:ring-2 focus:ring-sky-300"
                   >
                     <Calendar className="w-4 h-4" />
                   </button>
 
                   {calMenuOpen && (
-                    <div className="absolute left-0 sm:right-0 sm:left-auto mt-2 w-56 rounded-md bg-[#10233E] border border-slate-700 shadow-xl z-50 p-1.5 text-xs">
+                    <div className="absolute left-0 sm:right-0 sm:left-auto mt-2 w-56 rounded-xl bg-[#002D5B] border border-sky-600/60 shadow-2xl z-50 p-2 text-xs">
                       <a
                         href={getGoogleCalendarUrl()}
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={() => setCalMenuOpen(false)}
-                        className="flex items-center gap-2 px-3 py-2 rounded text-slate-200 hover:bg-slate-800 hover:text-white"
+                        className="flex items-center gap-2 px-3 py-2 rounded-lg text-sky-100 hover:bg-sky-800 hover:text-white"
                       >
-                        <Calendar className="w-3.5 h-3.5 text-blue-400" />
+                        <Calendar className="w-3.5 h-3.5 text-cyan-300" />
                         <span>Google Calendar</span>
                       </a>
                       <button
@@ -150,7 +176,7 @@ export function Hero() {
                           downloadIcsFile();
                           setCalMenuOpen(false);
                         }}
-                        className="w-full text-left flex items-center gap-2 px-3 py-2 rounded text-slate-200 hover:bg-slate-800 hover:text-white"
+                        className="w-full text-left flex items-center gap-2 px-3 py-2 rounded-lg text-sky-100 hover:bg-sky-800 hover:text-white"
                       >
                         <Download className="w-3.5 h-3.5 text-orange-400" />
                         <span>Download iCal / Outlook (.ics)</span>
@@ -161,89 +187,67 @@ export function Hero() {
               </div>
             </div>
 
-            {/* Transparent Note */}
-            <p className="text-xs text-slate-400 flex items-center gap-2 pt-1">
-              <ShieldCheck className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+            {/* Direct Official Link confirmation */}
+            <p className="text-xs text-sky-200/90 flex items-center gap-2 pt-1">
+              <ShieldCheck className="w-4 h-4 text-emerald-300 shrink-0" />
               <span>
                 Free participation for verified students · Directs securely to the official Microsoft Forms portal.
               </span>
             </p>
           </div>
 
-          {/* Right Column: Architectural Builder Flight Deck (5 cols) */}
-          <div className="lg:col-span-5">
-            <div className="relative rounded-2xl bg-gradient-to-b from-[#10233E] to-[#0B1628] border border-slate-700/80 shadow-2xl overflow-hidden p-6 sm:p-7 space-y-6">
-              {/* Header inside card */}
-              <div className="flex items-center justify-between border-b border-slate-800 pb-4">
-                <div className="flex items-center gap-2.5">
-                  <div className="w-2.5 h-2.5 rounded-full bg-emerald-400"></div>
-                  <span className="text-xs font-mono text-slate-300 font-semibold tracking-wider uppercase">
-                    Event Telemetry
-                  </span>
-                </div>
-                <span className="text-[11px] font-mono text-blue-300 px-2 py-0.5 rounded bg-blue-950/70 border border-blue-800">
-                  NODE: EKSU-2026
+          {/* Right Column: Visual Poster Card & Live Telemetry (5 cols) */}
+          <div className="lg:col-span-5 space-y-4">
+            {/* Authentic Poster Showcase */}
+            <div className="relative rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 p-2 shadow-2xl overflow-hidden group">
+              <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden shadow-inner bg-[#002D5B]">
+                <Image
+                  src="/images/official-poster.jpg"
+                  alt="Official Interswitch Discovery Series with Ekiti State University Poster"
+                  fill
+                  className="object-cover object-center group-hover:scale-[1.02] transition-transform duration-500"
+                  priority
+                />
+              </div>
+
+              {/* Poster caption strip */}
+              <div className="pt-2.5 pb-1 px-2 flex items-center justify-between text-xs font-mono text-sky-200">
+                <span className="flex items-center gap-1.5">
+                  <Sparkles className="w-3.5 h-3.5 text-amber-300" />
+                  Official Event Poster
+                </span>
+                <span className="text-white font-bold">EKSU · 2026</span>
+              </div>
+            </div>
+
+            {/* Real-Time Countdown Card */}
+            <div className="rounded-2xl bg-[#002D5B]/90 backdrop-blur-md border border-sky-600/40 p-5 shadow-xl">
+              <div className="flex items-center justify-between border-b border-sky-800/80 pb-3 mb-3">
+                <span className="text-xs font-mono text-sky-300 uppercase tracking-wider font-semibold">
+                  Countdown to Event Kickoff
+                </span>
+                <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-sky-900/80 text-cyan-300 border border-sky-700">
+                  OCTOBER 28, 2026
                 </span>
               </div>
 
-              {/* Countdown Grid */}
-              <div>
-                <div className="text-xs font-mono text-slate-400 uppercase tracking-wider mb-2">
-                  Event Countdown to Kickoff
+              <div className="grid grid-cols-4 gap-2 text-center">
+                <div className="bg-[#001E3D] rounded-xl p-2.5 border border-sky-800">
+                  <div className="text-2xl sm:text-3xl font-extrabold text-white font-mono">{timeLeft.days}</div>
+                  <div className="text-[10px] uppercase font-mono text-sky-300">Days</div>
                 </div>
-                <div className="grid grid-cols-4 gap-2 text-center">
-                  <div className="bg-[#0B1628] rounded-lg p-2.5 border border-slate-800">
-                    <div className="text-2xl sm:text-3xl font-extrabold text-white font-mono">{timeLeft.days}</div>
-                    <div className="text-[10px] uppercase font-mono text-slate-400">Days</div>
-                  </div>
-                  <div className="bg-[#0B1628] rounded-lg p-2.5 border border-slate-800">
-                    <div className="text-2xl sm:text-3xl font-extrabold text-white font-mono">{timeLeft.hours}</div>
-                    <div className="text-[10px] uppercase font-mono text-slate-400">Hours</div>
-                  </div>
-                  <div className="bg-[#0B1628] rounded-lg p-2.5 border border-slate-800">
-                    <div className="text-2xl sm:text-3xl font-extrabold text-white font-mono">{timeLeft.minutes}</div>
-                    <div className="text-[10px] uppercase font-mono text-slate-400">Mins</div>
-                  </div>
-                  <div className="bg-[#0B1628] rounded-lg p-2.5 border border-slate-800">
-                    <div className="text-2xl sm:text-3xl font-extrabold text-white font-mono">{timeLeft.seconds}</div>
-                    <div className="text-[10px] uppercase font-mono text-slate-400">Secs</div>
-                  </div>
+                <div className="bg-[#001E3D] rounded-xl p-2.5 border border-sky-800">
+                  <div className="text-2xl sm:text-3xl font-extrabold text-white font-mono">{timeLeft.hours}</div>
+                  <div className="text-[10px] uppercase font-mono text-sky-300">Hours</div>
                 </div>
-              </div>
-
-              {/* Verified Pillars */}
-              <div className="space-y-2.5">
-                <div className="text-xs font-mono text-slate-400 uppercase tracking-wider">
-                  Confirmed Series Activities
+                <div className="bg-[#001E3D] rounded-xl p-2.5 border border-sky-800">
+                  <div className="text-2xl sm:text-3xl font-extrabold text-white font-mono">{timeLeft.minutes}</div>
+                  <div className="text-[10px] uppercase font-mono text-sky-300">Mins</div>
                 </div>
-                <div className="space-y-2">
-                  {[
-                    { title: "Hackathons & Innovation Challenges", tag: "Sprint" },
-                    { title: "Hands-on Technical Workshops", tag: "Deep Dive" },
-                    { title: "Mentorship & Ecosystem Networking", tag: "Career" },
-                    { title: "Project & Talent Showcasing", tag: "Stage" },
-                    { title: "Innovation & Entrepreneurship Support", tag: "Venture" },
-                  ].map((item, idx) => (
-                    <div
-                      key={idx}
-                      className="flex items-center justify-between p-2.5 rounded-lg bg-[#0B1628]/80 border border-slate-800/80 hover:border-slate-700 transition-colors text-xs"
-                    >
-                      <div className="flex items-center gap-2">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-blue-400 shrink-0" />
-                        <span className="text-slate-200 font-medium">{item.title}</span>
-                      </div>
-                      <span className="font-mono text-[10px] px-1.5 py-0.5 rounded bg-slate-800 text-slate-400">
-                        {item.tag}
-                      </span>
-                    </div>
-                  ))}
+                <div className="bg-[#001E3D] rounded-xl p-2.5 border border-sky-800">
+                  <div className="text-2xl sm:text-3xl font-extrabold text-white font-mono">{timeLeft.seconds}</div>
+                  <div className="text-[10px] uppercase font-mono text-sky-300">Secs</div>
                 </div>
-              </div>
-
-              {/* Geographic Coordinates footnote */}
-              <div className="pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] font-mono text-slate-400">
-                <span>COORD: 7.7126° N, 5.2536° E</span>
-                <span className="text-amber-400 font-medium">ADMISSION: FREE FOR STUDENTS</span>
               </div>
             </div>
           </div>

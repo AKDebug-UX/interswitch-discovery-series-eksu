@@ -34,24 +34,24 @@ export function Showcase() {
   ];
 
   return (
-    <section id="showcase" className="bg-[#0B1628] text-white py-16 md:py-24 border-b border-slate-800">
+    <section id="showcase" className="bg-[#002D5B] text-white py-16 md:py-24 border-b border-sky-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded text-xs font-mono font-semibold bg-[#10233E] text-amber-400 border border-amber-500/30 uppercase tracking-wider mb-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded text-xs font-mono font-semibold bg-[#001E3D] text-cyan-300 border border-cyan-500/30 uppercase tracking-wider mb-3">
             Project & Talent Showcase
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight">
             From classroom capstones to market-ready prototypes.
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-slate-300 leading-relaxed">
+          <p className="mt-4 text-base sm:text-lg text-sky-100 leading-relaxed">
             Every year, Nigerian universities generate thousands of brilliant final-year projects that sit on library shelves.
             The Discovery Series provides the stage to bring those ideas into the open, test them with mentors, and explore sustainable venture pathways.
           </p>
         </div>
 
         {/* Conceptual Transparency Notice */}
-        <div className="mt-8 p-4 rounded-xl bg-[#10233E]/80 border border-amber-500/40 flex items-start gap-3 text-xs text-amber-200/90">
+        <div className="mt-8 p-4 rounded-xl bg-[#001E3D]/80 border border-amber-500/40 flex items-start gap-3 text-xs text-amber-200/90">
           <Info className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
           <div>
             <span className="font-semibold text-amber-300 uppercase tracking-wider font-mono mr-1">
@@ -67,11 +67,11 @@ export function Showcase() {
           {illustrativeExamples.map((item, idx) => (
             <div
               key={idx}
-              className="rounded-2xl bg-[#10233E]/60 border border-slate-800 p-6 flex flex-col justify-between hover:border-slate-700 transition-all duration-200 group"
+              className="rounded-2xl bg-[#001E3D]/90 border border-sky-700/60 p-6 flex flex-col justify-between hover:border-cyan-400 transition-all duration-200 group"
             >
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-[11px] font-mono uppercase tracking-wider text-blue-400 font-semibold">
+                  <span className="text-[11px] font-mono uppercase tracking-wider text-cyan-300 font-semibold">
                     {item.category}
                   </span>
                   <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-500/10 text-amber-300 border border-amber-500/20">
@@ -79,29 +79,29 @@ export function Showcase() {
                   </span>
                 </div>
 
-                <h3 className="text-lg font-bold text-white group-hover:text-blue-300 transition-colors">
+                <h3 className="text-lg font-bold text-white group-hover:text-cyan-200 transition-colors">
                   {item.title}
                 </h3>
 
-                <p className="text-xs text-slate-300 leading-relaxed">
+                <p className="text-xs text-sky-100/90 leading-relaxed">
                   {item.description}
                 </p>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-slate-800/80 space-y-3">
+              <div className="mt-6 pt-4 border-t border-sky-800/80 space-y-3">
                 <div className="flex flex-wrap gap-1.5">
                   {item.techStack.map((tech, i) => (
                     <span
                       key={i}
-                      className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0B1628] text-slate-400 border border-slate-800"
+                      className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#00142A] text-sky-300 border border-sky-800"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
-                <div className="text-[11px] font-mono text-slate-400 flex items-center justify-between">
+                <div className="text-[11px] font-mono text-sky-300 flex items-center justify-between">
                   <span>Scope:</span>
-                  <span className="text-slate-300">{item.stage}</span>
+                  <span className="text-white font-medium">{item.stage}</span>
                 </div>
               </div>
             </div>

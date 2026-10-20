@@ -75,7 +75,7 @@ export interface ActivityTrack {
   title: string;
   shortDesc: string;
   fullDesc: string;
-  icon: string;
+  badgeStyle: "cyan" | "orange-gradient" | "navy";
   tag: string;
   highlights: string[];
 }
@@ -83,72 +83,86 @@ export interface ActivityTrack {
 export const EVENT_ACTIVITIES: ActivityTrack[] = [
   {
     id: "hackathons",
-    title: "Hackathons & Innovation Challenges",
-    tag: "Collaborative Building",
-    icon: "Code2",
+    title: "Hackathon",
+    badgeStyle: "navy",
+    tag: "Collaborative Sprint",
     shortDesc: "Intensive team sprints tackling critical problems across African commerce, payments, logistics, and digital services.",
     fullDesc:
       "Form teams, collaborate with multidisciplinary peers, and build functioning prototypes in focused challenges designed to push your problem-solving capabilities.",
     highlights: [
-      "Real-world problem problem briefs",
+      "Real-world problem briefs",
       "Interdisciplinary teams of devs, designers & strategists",
       "Rapid prototype development and validation",
     ],
   },
   {
+    id: "design-thinking",
+    title: "Design Thinking Session",
+    badgeStyle: "orange-gradient",
+    tag: "User-Centered Design",
+    shortDesc: "Hands-on empathy mapping, problem framing, and interactive prototyping methods led by seasoned design mentors.",
+    fullDesc:
+      "Master the process of discovering unmet user needs, rapid UX ideation, and turning abstract concepts into intuitive digital experiences.",
+    highlights: [
+      "Customer empathy & problem definition",
+      "Wireframing and rapid clickable UI prototyping",
+      "Testing usability before writing code",
+    ],
+  },
+  {
     id: "workshops",
-    title: "Hands-on Technical Workshops",
-    tag: "Deep Practical Learning",
-    icon: "Terminal",
-    shortDesc: "Deep-dive practical sessions guided by practicing software architects, product designers, and system engineers.",
+    title: "Entrepreneurship Workshop",
+    badgeStyle: "cyan",
+    tag: "Venture Building",
+    shortDesc: "Essential foundations for translating campus technology projects into viable, sustainable startup businesses.",
     fullDesc:
-      "Move beyond slide presentations into live code, architectural teardowns, secure API integration, and modern cloud deployment patterns.",
+      "Learn how to validate business models, understand customer acquisition, manage unit economics, and prepare for investor conversations.",
     highlights: [
-      "Modern full-stack & mobile application engineering",
-      "API design, authentication, and secure fintech architecture",
-      "Product design systems & user experience workflows",
+      "Business model canvas & value proposition",
+      "Validating market demand for African tech products",
+      "Go-to-market strategies for student founders",
     ],
   },
   {
-    id: "mentorship",
-    title: "Mentorship & Ecosystem Networking",
-    tag: "Direct Guidance",
-    icon: "Users",
-    shortDesc: "Direct, meaningful conversations with experienced technology leaders, alumni founders, and engineering mentors.",
+    id: "integration",
+    title: "Product Integration Session",
+    badgeStyle: "cyan",
+    tag: "Hands-on Tech Integration",
+    shortDesc: "Practical engineering masterclasses on integrating real payment gateways, APIs, and modern cloud architectures.",
     fullDesc:
-      "Gain perspective on industry hiring, career navigation, product-market fit, and technical debt from individuals who have scaled systems across Africa.",
+      "Explore enterprise-grade fintech APIs, webhook handling, security compliance, and frictionless digital transaction flows with live code walk-throughs.",
     highlights: [
-      "Portfolio, code, and resume reviews",
-      "Navigating transition from campus to industry roles",
-      "One-on-one and small-group feedback circles",
+      "Modern API authentication and webhook security",
+      "Payment gateway integration patterns",
+      "Production-ready deployment & telemetry",
     ],
   },
   {
-    id: "showcase",
-    title: "Project & Talent Showcasing",
-    tag: "Stage for Builders",
-    icon: "Sparkles",
-    shortDesc: "A dedicated platform for campus innovators to present their working software, hardware models, and research prototypes.",
+    id: "grand-pitch",
+    title: "Grand Pitch",
+    badgeStyle: "orange-gradient",
+    tag: "Main Stage Competition",
+    shortDesc: "The ultimate stage where finalist teams present their prototypes and pitches before a panel of industry judges.",
     fullDesc:
-      "Demonstrate your projects to fellow students, visiting technology leaders, and potential collaborators hungry to discover raw African talent.",
+      "Demonstrate your working software, articulate your team's solution, and compete for top recognition, prizes, and future ecosystem opportunities.",
     highlights: [
-      "Live demonstration of working prototypes",
-      "Constructive feedback from technical judges",
-      "Visibility within the broader regional tech ecosystem",
+      "Live 5-minute pitch & prototype demonstration",
+      "Constructive feedback from industry experts",
+      "Spotlight before the entire campus community",
     ],
   },
   {
-    id: "opportunities",
-    title: "Innovation & Entrepreneurship Pathways",
-    tag: "Beyond Campus",
-    icon: "Rocket",
-    shortDesc: "Explore pathways to transition student capstone projects and experiments into viable startups and sustainable ventures.",
+    id: "prizes",
+    title: "Amazing Prizes to be won",
+    badgeStyle: "navy",
+    tag: "Participant Recognition",
+    shortDesc: "Prizes, gifts, and ecosystem opportunities to reward outstanding innovation, team effort, and creativity.",
     fullDesc:
-      "Discover resources, ecosystem links, and foundational business practices to help ambitious teams turn campus projects into real market solutions.",
+      "Standout student teams and active participants will be celebrated with prizes and gifts announced by the event organizers during the ceremonies.",
     highlights: [
-      "Foundational startup ideation & validation",
-      "Understanding customer discovery & market readiness",
-      "Exposure to ecosystem support and grant opportunities",
+      "Award categories announced during the sessions",
+      "Gifts and ecosystem perks for winning projects",
+      "Direct pathway to mentorship and growth",
     ],
   },
 ];

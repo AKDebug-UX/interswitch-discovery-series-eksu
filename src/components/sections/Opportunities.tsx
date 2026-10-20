@@ -35,24 +35,24 @@ export function Opportunities() {
   ];
 
   return (
-    <section id="opportunities" className="bg-[#0B1628] text-white py-16 md:py-24 border-b border-slate-800">
+    <section id="opportunities" className="bg-[#002D5B] text-white py-16 md:py-24 border-b border-sky-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded text-xs font-mono font-semibold bg-[#10233E] text-orange-400 border border-orange-500/30 uppercase tracking-wider mb-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded text-xs font-mono font-semibold bg-[#001E3D] text-orange-400 border border-orange-500/30 uppercase tracking-wider mb-3">
             Incentives & Growth
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight">
             Prizes, recognition, and pathways for student innovators.
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-slate-300 leading-relaxed">
+          <p className="mt-4 text-base sm:text-lg text-sky-100 leading-relaxed">
             While building and learning are at the center of the series, participants also have the opportunity
             to earn prizes, gain public recognition for their work, and establish valuable ecosystem relationships.
           </p>
         </div>
 
         {/* Responsible disclosure banner */}
-        <div className="mt-8 p-4 rounded-xl bg-[#10233E]/70 border border-slate-700 flex items-start gap-3 text-xs text-slate-300">
+        <div className="mt-8 p-4 rounded-xl bg-[#001E3D]/80 border border-amber-500/40 flex items-start gap-3 text-xs text-amber-200/90">
           <ShieldAlert className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
           <div>
             <strong className="text-amber-300">Official Announcement Note:</strong> While prizes and gifts are confirmed by the official announcement, specific cash amounts, award tiers, and individual placement offers are determined solely by event organizers and will be revealed during the event. We deliberately present only verified facts.
@@ -64,13 +64,13 @@ export function Opportunities() {
           {opportunityPillars.map((item, idx) => (
             <div
               key={idx}
-              className="rounded-2xl bg-[#10233E]/60 border border-slate-800 p-6 sm:p-8 space-y-4 hover:border-slate-700 transition-colors"
+              className="rounded-2xl bg-[#001E3D]/90 border border-sky-700/60 p-6 sm:p-8 space-y-4 hover:border-cyan-400 transition-colors shadow-lg"
             >
               <div className="flex items-center justify-between">
-                <div className="p-3 rounded-xl bg-[#0B1628] border border-slate-700">
+                <div className="p-3 rounded-xl bg-[#00142A] border border-sky-800">
                   {item.icon}
                 </div>
-                <span className="text-[11px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-slate-800/80 text-slate-400">
+                <span className="text-[11px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-sky-900/60 text-sky-300">
                   {item.tag}
                 </span>
               </div>
@@ -79,7 +79,7 @@ export function Opportunities() {
                 {item.title}
               </h3>
 
-              <p className="text-sm text-slate-300 leading-relaxed">
+              <p className="text-sm text-sky-100/90 leading-relaxed">
                 {item.description}
               </p>
             </div>
@@ -87,16 +87,16 @@ export function Opportunities() {
         </div>
 
         {/* Action strip */}
-        <div className="mt-12 p-6 rounded-2xl bg-gradient-to-r from-[#10233E] to-[#142A4E] border border-slate-700 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="mt-12 p-6 rounded-2xl bg-gradient-to-r from-[#001E3D] to-[#002D5B] border border-sky-700/60 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xl">
           <div className="text-center sm:text-left">
             <div className="text-sm font-bold text-white">Ready to compete and showcase your abilities?</div>
-            <div className="text-xs text-slate-300">Registration is open to all university students via Microsoft Forms.</div>
+            <div className="text-xs text-sky-200">Registration is open to all university students via Microsoft Forms.</div>
           </div>
           <a
             href={EVENT_CONFIG.registration.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#F97316] hover:bg-[#EA580C] text-white text-xs font-semibold tracking-wide transition-colors shrink-0 shadow-md"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#EF4444] to-[#F97316] text-white text-xs font-bold tracking-wide transition-all shadow-md hover:-translate-y-0.5 shrink-0"
           >
             <span>Register for the Event</span>
             <ExternalLink className="w-3.5 h-3.5" />

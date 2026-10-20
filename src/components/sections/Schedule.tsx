@@ -3,14 +3,14 @@ import { Clock, CheckCircle2, AlertCircle } from "lucide-react";
 
 export function Schedule() {
   return (
-    <section id="schedule" className="bg-[#F8F7F3] text-[#202631] py-16 md:py-24 border-b border-[#E5E0D5]">
+    <section id="schedule" className="bg-[#F0F9FF] text-[#002D5B] py-16 md:py-24 border-b border-sky-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded text-xs font-mono font-semibold bg-[#EAE6DC] text-[#10233E] uppercase tracking-wider mb-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded text-xs font-mono font-semibold bg-sky-100 text-[#002D5B] uppercase tracking-wider mb-3">
             3-Day Programme Architecture
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#0B1628] leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#002D5B] leading-tight">
             October 28–30, 2026: Three days structured for momentum.
           </h2>
           <p className="mt-4 text-base sm:text-lg text-slate-700 leading-relaxed">
@@ -19,14 +19,14 @@ export function Schedule() {
         </div>
 
         {/* Schedule Notice Badge */}
-        <div className="mt-8 p-4 rounded-xl bg-white border border-[#E2DFD6] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-slate-600">
+        <div className="mt-8 p-4 rounded-xl bg-white border border-sky-100 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-slate-600 shadow-sm">
           <div className="flex items-center gap-2">
-            <Clock className="w-4 h-4 text-[#EA580C] shrink-0" />
+            <Clock className="w-4 h-4 text-[#F97316] shrink-0" />
             <span>
               <strong>Schedule Status:</strong> 3-Day Dates & Core Themes are confirmed. Minute-by-minute room schedules, speaker rosters, and judging rubrics will be announced closer to the event date.
             </span>
           </div>
-          <span className="font-mono text-[11px] px-2.5 py-1 rounded bg-[#F8F7F3] text-slate-700 font-semibold border border-[#E2DFD6] shrink-0">
+          <span className="font-mono text-[11px] px-2.5 py-1 rounded bg-sky-50 text-[#002D5B] font-bold border border-sky-200 shrink-0">
             DATES: CONFIRMED
           </span>
         </div>
@@ -36,13 +36,13 @@ export function Schedule() {
           {EVENT_SCHEDULE_DAYS.map((day) => (
             <div
               key={day.dayNumber}
-              className="rounded-2xl bg-white border border-[#E2DFD6] p-6 sm:p-7 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow relative overflow-hidden"
+              className="rounded-2xl bg-white border border-sky-100 p-6 sm:p-7 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow relative overflow-hidden"
             >
               {/* Day Badge */}
               <div className="space-y-4">
-                <div className="flex items-center justify-between border-b border-slate-100 pb-3">
+                <div className="flex items-center justify-between border-b border-sky-50 pb-3">
                   <div className="flex items-center gap-2">
-                    <span className="w-7 h-7 rounded-lg bg-[#0B1628] text-white font-mono font-bold text-xs flex items-center justify-center">
+                    <span className="w-7 h-7 rounded-lg bg-[#002D5B] text-white font-mono font-bold text-xs flex items-center justify-center">
                       0{day.dayNumber}
                     </span>
                     <span className="font-mono text-xs font-semibold text-slate-500 uppercase tracking-wider">

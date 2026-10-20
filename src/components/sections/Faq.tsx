@@ -12,14 +12,14 @@ export function Faq() {
   };
 
   return (
-    <section id="faq" className="bg-[#F8F7F3] text-[#202631] py-16 md:py-24 border-b border-[#E5E0D5]">
+    <section id="faq" className="bg-[#F0F9FF] text-[#002D5B] py-16 md:py-24 border-b border-sky-100">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded text-xs font-mono font-semibold bg-[#EAE6DC] text-[#10233E] uppercase tracking-wider mb-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded text-xs font-mono font-semibold bg-sky-100 text-[#002D5B] uppercase tracking-wider mb-3">
             Common Questions
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#0B1628]">
+          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#002D5B]">
             Frequently Asked Questions
           </h2>
           <p className="mt-3 text-sm sm:text-base text-slate-600">
@@ -37,7 +37,7 @@ export function Faq() {
             return (
               <div
                 key={idx}
-                className="rounded-xl bg-white border border-[#E2DFD6] overflow-hidden transition-all duration-200"
+                className="rounded-xl bg-white border border-sky-100 overflow-hidden transition-all duration-200 shadow-sm"
               >
                 <button
                   type="button"

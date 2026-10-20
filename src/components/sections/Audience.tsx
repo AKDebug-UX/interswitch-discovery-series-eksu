@@ -27,14 +27,14 @@ export function Audience() {
   const current = AUDIENCE_GROUPS[selectedIdx];
 
   return (
-    <section id="audience" className="bg-[#F8F7F3] text-[#202631] py-16 md:py-24 border-b border-[#E5E0D5]">
+    <section id="audience" className="bg-[#F0F9FF] text-[#002D5B] py-16 md:py-24 border-b border-sky-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded text-xs font-mono font-semibold bg-[#EAE6DC] text-[#10233E] uppercase tracking-wider mb-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded text-xs font-mono font-semibold bg-sky-100 text-[#002D5B] uppercase tracking-wider mb-3">
             Who Should Attend
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#0B1628] leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#002D5B] leading-tight">
             Every craft has a place in the build cycle.
           </h2>
           <p className="mt-4 text-base sm:text-lg text-slate-700 leading-relaxed">
@@ -58,16 +58,16 @@ export function Audience() {
                   onClick={() => setSelectedIdx(idx)}
                   className={`w-full text-left p-4 rounded-xl border transition-all duration-200 flex items-center justify-between group ${
                     isActive
-                      ? "bg-[#0B1628] text-white border-[#0B1628] shadow-lg shadow-slate-900/10 scale-[1.01]"
-                      : "bg-white text-slate-700 border-[#E2DFD6] hover:bg-[#F3F0E6] hover:text-[#0B1628]"
+                      ? "bg-[#002D5B] text-white border-[#002D5B] shadow-lg shadow-sky-950/20 scale-[1.01]"
+                      : "bg-white text-slate-700 border-sky-100 hover:bg-sky-50 hover:text-[#002D5B]"
                   }`}
                 >
                   <div className="flex items-center gap-3">
                     <div
                       className={`p-2 rounded-lg ${
                         isActive
-                          ? "bg-[#10233E] text-[#60A5FA]"
-                          : "bg-slate-100 text-slate-600 group-hover:text-[#0B1628]"
+                          ? "bg-[#001E3D] text-cyan-300"
+                          : "bg-sky-50 text-slate-600 group-hover:text-[#002D5B]"
                       }`}
                     >
                       {icons[idx]}
@@ -76,7 +76,7 @@ export function Audience() {
                       <div className="text-sm font-bold leading-tight">{group.role}</div>
                       <div
                         className={`text-xs mt-0.5 line-clamp-1 ${
-                          isActive ? "text-slate-300" : "text-slate-500"
+                          isActive ? "text-sky-200" : "text-slate-500"
                         }`}
                       >
                         {group.tagline}
@@ -96,23 +96,23 @@ export function Audience() {
           </div>
 
           {/* Right Column: Tailored Experience Deep Dive (7 cols) */}
-          <div className="lg:col-span-7 bg-white rounded-2xl border border-[#E2DFD6] p-6 sm:p-8 lg:p-10 shadow-sm space-y-6">
-            <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 pb-4">
+          <div className="lg:col-span-7 bg-white rounded-2xl border border-sky-100 p-6 sm:p-8 lg:p-10 shadow-sm space-y-6">
+            <div className="flex flex-wrap items-center justify-between gap-2 border-b border-sky-50 pb-4">
               <div className="flex items-center gap-2">
-                <span className="p-2 rounded-lg bg-blue-50 text-[#1D4ED8]">
+                <span className="p-2 rounded-lg bg-sky-50 text-[#00A3E0]">
                   {icons[selectedIdx]}
                 </span>
                 <div>
-                  <div className="text-xs font-mono uppercase tracking-wider text-slate-700 font-semibold">
+                  <div className="text-xs font-mono uppercase tracking-wider text-slate-600 font-semibold">
                     Focused Track
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-[#0B1628]">
+                  <h3 className="text-xl sm:text-2xl font-bold text-[#002D5B]">
                     {current.role}
                   </h3>
                 </div>
               </div>
 
-              <span className="text-xs font-mono font-medium px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">
+              <span className="text-xs font-mono font-medium px-2.5 py-1 rounded-full bg-cyan-50 text-cyan-800 border border-cyan-200">
                 Beginners & Experienced Welcome
               </span>
             </div>
